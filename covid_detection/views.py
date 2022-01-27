@@ -1,7 +1,6 @@
-import imp
-from django.http import HttpResponse, JsonResponse
+from django.http import  JsonResponse
 from .detection_algorithm  import readData, encodeData, removeUnwantedData, calculateInfectionProbability
-from .covid_serializers import CovidSerializers
+
 
 def detectCovidInfectionProb(req): 
     print(req.body)
@@ -14,4 +13,4 @@ def detectCovidInfectionProb(req):
         "payload" : {
             "percentage" : probability,
         }
-    }, safe=False)
+    }, safe=False,)
