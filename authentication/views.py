@@ -5,7 +5,7 @@ from .models import Profile
 from django.contrib.auth import login, authenticate, logout
 
 
-def saveUser(req):
+def registerUser(req):
     reqBody = json.loads(req.body)
     username = reqBody['username']
     password = reqBody['password']
@@ -41,7 +41,7 @@ def saveUser(req):
         }, safe=False)
 
 
-def Login(req):
+def loginUser(req):
     reqBody = json.loads(req.body)
     username = reqBody['username']
     password = reqBody['password']
